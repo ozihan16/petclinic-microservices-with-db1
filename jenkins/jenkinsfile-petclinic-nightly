@@ -1,3 +1,7 @@
+# APP_STACK_NAME cfn de oluşacak isim ve APP_REPO_NAME : isteğe bağlı
+# CFN_KEYPAIR : isteğe bağlı
+# ECR_REGISTRY : isteğe bağlı
+
 pipeline {
     agent any
     environment {
