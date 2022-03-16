@@ -1,0 +1,25 @@
+nodes:
+  - address: 44.192.108.37
+    internal_address: 172.31.11.19
+    user: ubuntu
+    role:
+      - controlplane
+      - etcd
+      - worker
+
+# ignore_docker_version: true
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+ssh_key_path: /home/ec2-user/.ssh/ozi-rancher.pem
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
